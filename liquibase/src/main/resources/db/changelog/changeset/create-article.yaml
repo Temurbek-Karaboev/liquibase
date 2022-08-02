@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-article
+      author: Admin
+      changes:
+        - createTable:
+            tableName: article
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: text
+                  type: varchar
+                  constraints:
+                    nullable: true
+              - column:
+                  name: author_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: false
